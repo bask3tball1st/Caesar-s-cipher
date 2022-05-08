@@ -24,6 +24,11 @@ string encrypt_caesar(string t, int offset)
     return t;
 }
 
+string decrypt_caesar1(string t, int offset) 
+{
+  return encrypt_caesar(t, -offset);
+}
+
 string decrypt_caesar(string t, int offset)
 {
     for (int i = 0; i < t.length(); i++) {
@@ -56,7 +61,7 @@ int main() {
     string encryptText = encrypt_caesar(text, shift);
     cout << "Result: " << endl;
     cout << encryptText << endl;
-    string decryptText = decrypt_caesar(encryptText, shift);
+    string decryptText = decrypt_caesar1(encryptText, shift);
     //string decryptText = encrypt_caesar(encryptText, -shift);
     cout << "Decrypt: " << endl;
     cout << decryptText << endl;
